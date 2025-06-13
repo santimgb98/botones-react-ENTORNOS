@@ -1,4 +1,3 @@
-
 import {
   Card,
   CardAction,
@@ -9,14 +8,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-let listaUsuarios = ['pepe','martin','jose','pablo'];
 
 export default function Carta(user){
 
     return(
         <Card>
             <CardHeader>
-                <CardTitle>`${usuario}`</CardTitle>
+                <CardTitle>`${user}`</CardTitle>
                 <CardDescription>Card Description</CardDescription>
                 <CardAction>Card Action</CardAction>
             </CardHeader>
