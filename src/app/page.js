@@ -1,30 +1,69 @@
+"use client";
+import { useState } from "react";
+
 export default function Home() {
-  const click = () => {
-    alert('¡Has hecho clic en el botón!');
+  let [contador, setContador] = useState(0);
+
+  if (contador < 0) {
+    const idContador = document.getElementById("contadorid");
+    idContador.className =
+      "text-red-600 bg-white border-gray-300 border-5 text-6xl rounded-xl w-160 h-30 p-6 text-center";
+  } else if (contador > 0) {
+    const idContador = document.getElementById("contadorid");
+    idContador.className =
+      "text-green-600 bg-white border-gray-300 border-5 text-6xl rounded-xl w-160 h-30 p-6 text-center";
+  } else {
+    const idContador = document.getElementById("contadorid");
+    idContador.className =
+      "text-black bg-white border-gray-300 border-5 text-6xl rounded-xl w-160 h-30 p-6 text-center";
+  }
+
+  const sumar = () => {
+    setContador((num) => num + 1);
+  };
+
+  const restar = () => {
+    setContador((num) => num - 1);
+  };
+
+  const reseteo = () => {
+    setContador(0);
   };
   return (
-    <div>
-
-      <div>
-        <h1 class ="text-center text-3xl mt-10 mb-10">Botón contador</h1>
-      </div>
-
-
-      <div class="flex justify-center">
-        <div class="border border-black-100 border-5 shadow-xl w-300 h-150 rounded-xl">
-          
-          <div class="flex justify-center text-center text-4xl m-40 ">
-            <p class="border border-black-100 border-5 rounded-xl w-100 h-20 p-3">0</p>
+    <div class="bg-[url('../images/fondoMates.jpg')] bg-cover bg-center h-screen">
+      <div className="flex justify-center">
+        <div className="shadow-xl w-200 h-100 rounded-xl">
+          <div className="flex justify-center text-4xl mt-50 mb-20">
+            <p
+              id="contadorid"
+              className="bg-white border-gray-300 border-5 text-6xl rounded-xl w-160 h-30 p-6 text-center"
+            >
+              {contador}
+            </p>
           </div>
-          
-          <div class="flex rounded-2% items-center justify-center gap-4">
-            <button onClick={click} class="border border-green-100 border-5 w-30 h-15 text-2xl rounded-xl">++</button>
-            <button class="border border-red-100 border-5 w-30 h-15 text-2xl rounded-xl">--</button>
-            <button class="border border-blue-100 border-5 w-30 h-15 text-2xl rounded-xl">restart</button>
+
+          <div className="flex rounded-2% items-center justify-center gap-5">
+            <button
+              onClick={sumar}
+              className="bg-green-500 text-white w-50 h-25 text-4xl rounded-xl"
+            >
+              ++
+            </button>
+            <button
+              onClick={restar}
+              className="bg-red-500 text-white w-50 h-25 text-4xl rounded-xl"
+            >
+              --
+            </button>
+            <button
+              onClick={reseteo}
+              className="bg-blue-500 text-white w-50 h-25 text-4xl rounded-xl"
+            >
+              restart
+            </button>
           </div>
         </div>
       </div>
-
     </div>
   );
 }
