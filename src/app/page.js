@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <div class="bg-[url('../images/fondoMates.jpg')] bg-cover bg-center h-screen">
       <div className="flex justify-center">
-        <div className="shadow-xl w-200 h-100 rounded-xl">
+        <div className="shadow-xl w-50 md:w-200 h-100 rounded-xl">
           <div className="flex justify-center text-4xl mt-50 mb-20">
             <p
               className={` bg-white border-gray-300 border-5 text-6xl rounded-xl 
@@ -36,7 +36,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex rounded-2% items-center justify-center gap-5">
+          <div className="grid grid-cols-1md:flex rounded-2% items-center justify-center gap-5">
             <button
               onClick={sumar}
               className="bg-green-500 text-white w-50 h-25 text-4xl rounded-xl"
